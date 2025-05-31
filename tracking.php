@@ -42,13 +42,13 @@ elseif (isset($_POST['search_value']) && !empty(trim($_POST['search_value']))) {
 
     // Build query berdasarkan tipe pencarian
     switch ($search_type) {
-        case 'nama':
-            $query = "SELECT p.*, j.nama as jenis_izin_nama 
-                      FROM pengajuan_izin p 
-                      JOIN jenis_izin j ON p.jenis_perizinan_id = j.id 
-                      WHERE p.nama_pemohon LIKE '%$search_escaped%'
-                      ORDER BY p.tanggal_pengajuan DESC";
-            break;
+        // case 'nama':
+        //     $query = "SELECT p.*, j.nama as jenis_izin_nama 
+        //               FROM pengajuan_izin p 
+        //               JOIN jenis_izin j ON p.jenis_perizinan_id = j.id 
+        //               WHERE p.nama_pemohon LIKE '%$search_escaped%'
+        //               ORDER BY p.tanggal_pengajuan DESC";
+        //     break;
 
         case 'whatsapp':
             // Bersihkan nomor WhatsApp dari karakter non-digit
@@ -88,7 +88,7 @@ elseif (isset($_POST['search_value']) && !empty(trim($_POST['search_value']))) {
     } else {
         $search_labels = [
             'kode' => 'kode pengajuan',
-            'nama' => 'nama pemohon',
+            // 'nama' => 'nama pemohon',
             'whatsapp' => 'nomor WhatsApp',
             'email' => 'email',
         ];
@@ -160,8 +160,8 @@ $warning_color = '#ffc107';
                                             onchange="updatePlaceholder()">
                                             <option value="kode" <?= $search_type == 'kode' ? 'selected' : '' ?>>Kode
                                                 Pengajuan</option>
-                                            <option value="nama" <?= $search_type == 'nama' ? 'selected' : '' ?>>Nama
-                                                Pemohon</option>
+                                            <!-- <option value="nama" <?= $search_type == 'nama' ? 'selected' : '' ?>>Nama
+                                                Pemohon</option> -->
                                             <option value="whatsapp"
                                                 <?= $search_type == 'whatsapp' ? 'selected' : '' ?>>No. WhatsApp
                                             </option>
@@ -286,7 +286,7 @@ $warning_color = '#ffc107';
                                 <h5 class="mb-0 text-white">
                                     <i class="bi bi-file-earmark-check me-2"></i>Detail Pengajuan
                                 </h5>
-                                <a href="<?= $base_url ?>/perizinan/tracking.php" class="btn btn-sm btn-outline-light">
+                                <a href="<?= $base_url ?>/tracking.php" class="btn btn-sm btn-outline-light">
                                     <i class="bi bi-arrow-left me-1"></i>Kembali
                                 </a>
                             </div>

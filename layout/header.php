@@ -115,7 +115,7 @@ if (!$result_izin) {
                                 <li><a href="<?= $base_url ?>/perizinan/cara-pengajuan.php">Cara Pengajuan</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?= $base_url ?>/tracking.php">Cari Surat</a></li>
+                        <li><a href="<?= $base_url ?>/tracking.php">Cari Perizinan</a></li>
                         <li><a href="<?= $base_url ?>/#about">Tentang</a></li>
                         <li><a href="<?= $base_url ?>/#contact">Kontak</a></li>
                     </ul>
